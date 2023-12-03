@@ -1,0 +1,65 @@
+body {
+  background-color: #f5f5f5;
+}
+
+.container {
+  background-color: #f5f2f2;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(8, 8, 8, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #555;
+}
+
+.available {
+  font-weight: bold;
+  color: #009900;
+}
+
+p.loading {
+  color: #333;
+  font-weight: bold;
+}
+
+.add-review-button {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 10px;
+  }
+
+  .col-md-8 {
+    flex: 0 0 66.667%;
+    max-width: 66.667%;
+  }
+
+  .add-review-button {
+    text-align: right;
+  }
+}
+
+@media (max-width: 767px) {
+  .center-buttons {
+    text-align: center;
+  }
+
+  .center-buttons .mb-2 {
+    display: flex;
+    justify-content: center;
+  }
+}

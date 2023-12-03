@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&family=Roboto+Slab&family=Rubik&display=swap");
+
+.doctor-details,
+.patient-details {
+  font-family: "Roboto Serif", serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.text-style {
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.sticky {
+  position: fixed;
+}
+
+.custom-border-color {
+  border-color: #826aac;
+  border-width: 2.5px;
+  width: 75%;
+}
+
+.labelDesign {
+  color: #826aac;
+  font-weight: bold;
+}
+
+.card-container {
+  margin-left: -20px;
+  margin-right: -10px;
+}
+
+.card {
+  padding: 10px;
+}
+
+.notification-bell {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 0.85em;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-list::-webkit-scrollbar {
+  display: none;
+}
+
+.notification-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.new-notification {
+  background-color: #e0f7fa;
+  color: #0277bd;
+}
+
+.fa-bell:hover {
+  cursor: pointer;
+}
+
+.card-color-1 {
+  background-color: rgb(172, 221, 182);
+}
+
+.card-color-2 {
+  background-color: #dbf196;
+}
+
+.card-color-3 {
+  background-color: rgb(239, 241, 150);
+}
+
+.card-color-4 {
+  background-color: rgb(241, 224, 150);
+}
+
+.custom-label-wrapper label {
+  font-size: 1rem;
+}
+
+.department-header {
+  background-color: #d3f5f1;
+  text-align: center;
+  padding: 3px;
+  margin-top: 1.6em;
+}
+
+.department-header h1 {
+  font-family: "Arial", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.radio-button-group .ant-radio-wrapper {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.consult-header h1,
+.consult-header h3 {
+  animation: pulse 2s infinite;
+  background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.card-title {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+}
+
+.dept-doctors {
+  background: linear-gradient(45deg, #216c1a, #a11fb2, #fdbb2d);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.admin-color {
+  background: linear-gradient(45deg, #91ac65, #717516, #553b17);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.facebook-comment {
+  display: flex;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f2f3f5;
+}
+
+.comment-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-content {
+  flex-grow: 1;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin: 0;
+}
+
+.comment-text {
+  margin: 0;
+}
+
+.inputfield-margin {
+  margin-bottom: 4px;
+}
