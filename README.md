@@ -46,15 +46,6 @@ For handling API requests and routing them to appropriate services.
   
 
 Other microservices utilize MySQL for efficient data storage and retrieval.
-
-  
-
-### WebClient and Auto-trigger Retry Mechanism
-
-  
-
-Microservices communicate with each other using WebClient, enabling efficient microservice-to-microservice communication. An auto-trigger retry mechanism ensures data consistency.
-
   
 
 ### Feign Client
