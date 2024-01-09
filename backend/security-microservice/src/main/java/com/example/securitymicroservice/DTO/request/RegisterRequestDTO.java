@@ -12,10 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRequestDTO {
-    @NotEmpty(message = "Name is required")
-    @Size(min = 5, message = "Name should have at least 5 character")
-    private String name;
-
     @NotEmpty(message = "Email should not be null or empty")
     @Email
     private String email;

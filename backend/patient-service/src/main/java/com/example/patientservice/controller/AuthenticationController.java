@@ -4,6 +4,7 @@ import com.example.patientservice.dto.request.RegisterRequestDTO;
 import com.example.patientservice.dto.response.AuthenticationResponseDTO;
 import com.example.patientservice.response.ResponseHandler;
 import com.example.patientservice.service.AuthenticationService;
+import com.example.patientservice.webclient.SecurityWebClient;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,4 +27,5 @@ public class AuthenticationController {
         AuthenticationResponseDTO responseDTO = authenticationService.registerPatient(request);
         return ResponseHandler.generateResponse(new Date(), "Registration Successful", HttpStatus.OK, responseDTO);
     }
+
 }

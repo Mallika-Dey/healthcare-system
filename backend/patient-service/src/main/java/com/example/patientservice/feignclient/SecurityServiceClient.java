@@ -6,8 +6,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "api-gateway", configuration = CustomFeignErrorDecoder.class)
+@FeignClient(name = "security-service", configuration = CustomFeignErrorDecoder.class)
 public interface SecurityServiceClient {
-    @PostMapping("/security-service/api/v2/auth/register")
+    @PostMapping("/api/v2/auth/register")
     public AuthenticationResponseDTO register(@RequestBody RegisterFeignDTO request);
 }

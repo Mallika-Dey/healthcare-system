@@ -23,6 +23,7 @@ import com.example.patientservice.security.CustomWebAuthentication;
 import com.example.patientservice.service.AuthenticationService;
 import com.example.patientservice.utils.AppConstant;
 import com.example.patientservice.utils.EnumValidators;
+import com.example.patientservice.webclient.SecurityWebClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -39,7 +41,9 @@ import java.util.Date;
 @Slf4j
 public class AuthenticationServiceImpl implements AuthenticationService {
     private final PatientRepository patientRepository;
-    private final SecurityServiceClient securityServiceClient;
+    private final SecurityWebClient securityWebClient;
+
+//    private final SecurityServiceClient securityServiceClient;
 
     @Override
     public AuthenticationResponseDTO registerPatient(RegisterRequestDTO registerRequestDTO) {
@@ -84,15 +88,20 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .build();
     }
 
+//    private AuthenticationResponseDTO register(RegisterRequestDTO registerRequestDTO) {
+//        RegisterFeignDTO registerFeignDTO = mapToFeignDTO(registerRequestDTO);
+//        try {
+//            log.debug("Registering patient .........");
+//            return securityServiceClient.register(registerFeignDTO);
+//        } catch (FeignCustomException ex) {
+//            log.error("Registration failed ", ex);
+//            throw ex;
+//        }
+//    }
+
     private AuthenticationResponseDTO register(RegisterRequestDTO registerRequestDTO) {
         RegisterFeignDTO registerFeignDTO = mapToFeignDTO(registerRequestDTO);
-        try {
-            log.debug("Registering patient .........");
-            return securityServiceClient.register(registerFeignDTO);
-        } catch (FeignCustomException ex) {
-            log.error("Registration failed ", ex);
-            throw ex;
-        }
+        return securityWebClient.register(registerFeignDTO);
     }
 
     @Override

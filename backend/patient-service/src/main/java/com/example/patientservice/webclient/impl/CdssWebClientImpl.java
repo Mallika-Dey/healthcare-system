@@ -5,7 +5,10 @@ import com.example.patientservice.dto.response.ProxyResponseDTO;
 import com.example.patientservice.service.AuthenticationService;
 import com.example.patientservice.utils.AppConstant;
 import com.example.patientservice.webclient.CdssWebClient;
+import com.netflix.discovery.converters.Auto;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClientRequestException;
@@ -17,13 +20,15 @@ import java.time.Duration;
 
 @Service
 public class CdssWebClientImpl implements CdssWebClient {
-    private final WebClient.Builder webclient;
-    private final AuthenticationService authenticationService;
+    @Autowired
+    private WebClient.Builder webclient;
+    @Autowired
+    private AuthenticationService authenticationService;
 
-    public CdssWebClientImpl(WebClient.Builder webclient, AuthenticationService authenticationService) {
-        this.webclient = webclient.baseUrl("http://localhost:9090/cdss-service");
-        this.authenticationService = authenticationService;
-    }
+//    public CdssWebClientImpl(WebClient.Builder webclient, AuthenticationService authenticationService) {
+//        this.webclient = webclient.baseUrl("http://localhost:9090/cdss-service");
+//        this.authenticationService = authenticationService;
+//    }
 
     @CircuitBreaker(name = "CircuitBreakerService")
     @Override
@@ -31,7 +36,7 @@ public class CdssWebClientImpl implements CdssWebClient {
         return webclient
                 .build()
                 .post()
-                .uri("/api/v2/cdss/proxy/save")
+                .uri("http://CDSS-SERVICE/api/v2/cdss/proxy/save")
                 .header("Authorization", authenticationService.getTokenFromPrincipal())
                 .bodyValue(progressRequestDTO)
                 .retrieve()
