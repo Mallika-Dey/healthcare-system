@@ -99,6 +99,6 @@ To get started with the Healthcare Management System, follow these steps:
 
 ```bash
 
-git clone https://github.com/BJITAcademy2021/YSD_B03_J2EE_FinalProject_Mallika.git
+git clone https://github.com/Mallika-Dey/healthcare-system.git
 
-cd YSD_B03_J2EE_FinalProject_Mallika
+cd healthcare-system
