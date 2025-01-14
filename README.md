@@ -3,7 +3,13 @@
 
 Healthcare Management System is a comprehensive system designed to streamline patient care, doctor scheduling, consultation, pharmaceutical inventory, and more. Built using Spring Boot, this application leverages resilience4j for fault tolerance, Feign client for declarative REST client, and WebSocket for real-time notifications, among other advanced features.
 
+  ### Microservices Architecture
+
   
+
+This system is built on a microservices architecture, ensuring modularity and scalability. Each microservice addresses specific aspects of data management.
+
+![Healthcare System Architecture](https://github.com/MallikaBJIT/images/blob/main/Architecture.png)
 
 ## Technologies
 
@@ -73,16 +79,6 @@ For real-time user specific notifications.
   
 
 The Authentication Service handles user registration, login. Secure user authentication and access token generation are implemented.
-
-  
-
-### Microservices Architecture
-
-  
-
-This system is built on a microservices architecture, ensuring modularity and scalability. Each microservice addresses specific aspects of data management.
-
-![Healthcare System Architecture](https://github.com/MallikaBJIT/images/blob/main/Architecture.png)
 
   
   
